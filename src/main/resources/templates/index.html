@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/index.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<div th:include="fragments/navbar::navbar"></div>
+<br/><br/>
+
+<header>
+    <div class="overlay"></div>
+    <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+            <div class="w-100 text-white">
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="info-section">
+    <div class="container">
+        <div class="head-box text-center mb-5">
+            <h2>Our service</h2>
+            <h6 class="text-underline-primary">Don't miss our great offers today!</h6>
+        </div>
+        <div class="three-panel-block mt-5">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="service-block-overlay text-center mb-5 p-lg-3">
+                        <i class="fa fa-cutlery box-circle-solid mt-3 mb-3" aria-hidden="true"></i>
+                        <h3>Quality</h3>
+                        <p class="px-4">We're very passionate about the quality of our ingredients and pizza. </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="service-block-overlay text-center mb-5 p-lg-3">
+                        <i class="fa fa-truck box-circle-solid mt-3 mb-3" aria-hidden="true"></i>
+                        <h3>Delivery</h3>
+                        <p class="px-4"> We're offering free delivery on all orders of 15$ or more !</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="service-block-overlay text-center p-lg-3">
+                        <i class="fa fa-mobile box-circle-solid mt-3 mb-3" aria-hidden="true"></i>
+                        <h3>Contact Support</h3>
+                        <p class="px-4">We're offering two ways of making an order - via phone or via our website!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="info-section bg-primary py-0">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-lg-6 content-half mt-md-0 pl-5 pt-4" style="background-color: #D72323;">
+
+                <h2 class="text-white">About us</h2>
+                <h6 class="text-white text-underline-rb-white">Something about us...</h6>
+                <br>
+                We wake up every morning to make fresh dough from scratch, and with a recipe that's over 40
+                years old. So yeah, we've been making it like this for a while now. Our grandparents made it this
+                way, our parents made it this way, so there is no chance we are making it any other way. Our pizza
+                sauce is made with 100% American tomatoes and fresh basil from our garden every day for the next
+                day. We make our fresh mozzarella in Harlingen Texas from a Wisconsin curd every week. Our pizzas
+                are made with our own blend of whole milk, partskim, and fresh mozzarella to achieve a moist but not
+                too greasy companion for our house pizza sauce. Our ovens heat up to over 500 degrees so that by 11
+                AM we have fresh pizza pies that are ready to slice up and serve to our beloved patrons.
+
+            </div>
+            <div class="col-md-6 p-0 m-0">
+                <img src="img/pizza-dough.jpg" class="img-fluid">
+            </div>
+        </div>
+</section>
+
+
+<section class="team-section py-10">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="head-box text-center mb-5 col-md-12">
+                <h2>Our menu</h2>
+            </div>
+
+            <div class="col-md-4 mb-md-0 mb-sm-4">
+                <a th:href="@{/itemsList(id=1)}">
+                    <div class="member-box anim-lf t-bottom">
+                        <img class="img-fluid" src="img/pizza-menu.png" alt="">
+                        <div class="overlay-content">
+                            <h3 class="text-white ml-3 my-0">Check out our pizza menu</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-md-0 mb-sm-4">
+            </div>
+            <div class="col-md-4 mb-md-0 mb-sm-4">
+                <a th:href="@{/itemsList(id=2)}">
+
+                    <div class="member-box anim-lf t-bottom">
+                        <img class="img-fluid" th:src="@{img/drink-menu.png}" alt="">
+                        <div class="overlay-content">
+                            <h3 class="text-white ml-3 my-0">Check out our drink menu</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr id="separator">
+
+<blockquote>
+    <div class="overlay"></div>
+    <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+            <div class="w-100 text-white">
+                <h5 class="display-4">"We believe that as long as we work hard and offer the best pizza, our customers
+                    will love our place as much as we do."</h5>
+                <h2 class="lead mb-0">— Chef Alex Formacio</p>
+            </div>
+        </div>
+    </div>
+</blockquote>
+
+<hr id="separator">
+
+
+<section class="page-section" id="contact">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mt-0">Contact us</h2>
+                <hr class="divider my-4">
+                <p class="text-muted mb-5" style="color: red;"> We’d love to hear what you think about our
+                    food and service – both the good and the not so good. Let us know.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 ml-auto text-center">
+                <i class="fa fa-phone fa-3x mb-3 text-muted"></i>
+                <div>+1 (956) 465-1462</div>
+            </div>
+            <div class="col-lg-4 mr-auto text-center">
+                <i class="fa fa-envelope fa-3x mb-3 text-muted"></i>
+                <a class="d-block" href="mailto:jovan.dimitrijevic.3404@metropolitan.ac.rs">jovan.dimitrijevic.3404@metropolitan.ac.rs</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--FOOTER-->
+<div th:include="fragments/footer::footer"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+    <title>Product info</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/index.css}"/>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/item.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+    <style>
+        .line {
+            display: inline;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div th:include="fragments/navbar::navbar"></div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<h2 style="text-align:center"> Product </h2>
+<br/>
+<div class="col-md-12 form-info">
+    <div class="row" th:object="${item}">
+        <div class="col-sm-2"></div>
+
+        <div class="col-sm-4">
+            <img class="img-fluid" th:src="*{imgPath}" alt="skis" height="650px" width="490px">
+        </div>
+
+        <div class="col-sm-6 line">
+            <h3>Name:</h3>
+            <p th:text="*{name}"><br/></p>
+            <h3>Description:</h3>
+            <p th:text="*{description}"></p>
+            <h3>Price:</h3>
+            <p th:text="*{#numbers.formatCurrency(price)}"></p>
+
+            <div class="col-sm-6">
+
+                <a sec:authorize="isAuthenticated() && hasRole('ADMIN')"
+                   th:href="@{/admin/showFormForUpdate(id=${item.id})}"
+                   class="btn btn-info btn-md col-sm-6">
+                    Update
+                </a>
+            </div>
+            <br/>
+            <div class="col-sm-6">
+
+                <a sec:authorize="isAuthenticated() && hasRole('ADMIN')"
+                   th:href="@{/admin/deleteItem(id=${item.id})}"
+                   class="btn btn-danger btn-md col-sm-6 ">
+                    Delete
+                </a>
+            </div>
+            <br/>
+            <div class="col-sm-10">
+                <a th:href="@{/users/items/add(itemID=${item.id})}"
+                   sec:authorize="isAuthenticated() && hasRole('USER')"
+                   class="btn btn-info btn-md col-sm-6">
+                    Add to cart
+                </a>
+            </div>
+        </div>
+
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+
+<br/>
+<br/>
+
+<br/><br/>
+<div th:include="fragments/footer::footer"></div>
+
+
+</body>
+
+</html>

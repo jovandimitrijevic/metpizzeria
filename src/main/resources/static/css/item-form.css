@@ -1,0 +1,30 @@
+body {
+    background: #eee !important;
+}
+
+.wrapper {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    height: 90vh;
+}
+
+.item-form {
+    max-width: 380px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#page-content {
+    flex: 1 0 auto;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+}

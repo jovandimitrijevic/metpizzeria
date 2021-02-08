@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/register.css}"/>
+    <link rel="stylesheet" th:href="@{/css/index.css}"/>
+
+
+</head>
+<body class="d-flex flex-column">
+<div th:include="fragments/navbar::navbar"></div>
+
+<div class="wrapper" id="register-form">
+    <form class="form-signin" th:action="@{/user/save}"
+          th:object="${user}" method="POST">
+        <h2 class="form-signin-heading">Registration</h2>
+        <br/>
+
+        <input type="text" class="form-control" th:field="*{firstName}" placeholder="First name" required="true"
+               autofocus=""/>
+        <td th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Name Error</td>
+
+        <br/>
+        <input type="text" class="form-control" th:field="*{lastName}" placeholder="Last name" required="true"
+               autofocus=""/>
+        <br/>
+
+        <input type="text" class="form-control" th:field="*{username}" id="username" placeholder="Username"
+               required="true"
+               autofocus=""/>
+        <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" style="font: bold; color: red;">Invalid
+            username. Please enter valid
+            one.</p>
+        <br/>
+
+        <input type="text" class="form-control" id="email" th:field="*{email}" placeholder="E-mail" required="true"
+               autofocus=""/>
+        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="font: bold; color: red;">Invalid email.</p>
+        <br/>
+
+        <input type="password" class="form-control" th:field="*{password}"
+               placeholder="Password" id="password"
+               required="true"/>
+        <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="font: bold; color: red;">Invalid
+            password.</p>
+        <br/>
+
+        <input type="text" class="form-control" th:field="*{address}" placeholder="Address" required="true"/>
+        <br/>
+
+        <button class="btn btn-lg btn-danger btn-block" type="submit">Register</button>
+    </form>
+</div>
+<br/>
+
+
+<div th:include="fragments/footer::footer"></div>
+
+<!-- <div th:include="fragments/footer::footer"></div>-->
+
+</body>
+</html>
